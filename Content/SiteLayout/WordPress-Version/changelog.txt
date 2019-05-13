@@ -1,0 +1,22 @@
+Oct 18, 2016
+
+- version 1.0.5
+- the theme now is managed and supported over bootstrapmade.com
+- fixed some WP deprecated functions
+- updated the TGM activation plugin
+- updated the font awesome plugin
+
+Feb 22, 2016
+
+- version 1.0.4
+- fixed the slider issue after updating the metabox plugin
+
+Nov 12, 2015
+
+- version 1.0.3
+- update the meta box and Bootstrap Shorcodes plugins
+
+Sep 19, 2014
+
+- version 1.0.2
+- update iwebtheme moderna shortcode plugin for WP 4.0 compatibility

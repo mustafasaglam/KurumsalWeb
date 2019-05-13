@@ -1,0 +1,46 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Admin>
+
+@{
+    ViewBag.Title = "Adminler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Adminler</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Eposta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Yetki)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eposta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Yetki)
+        </td>
+        <td>
+            @Html.ActionLink("Güncelle", "Edit", new { id=item.AdminId }) |
+            @Html.ActionLink("Detay", "Details", new { id=item.AdminId }) |
+            @Html.ActionLink("Sil", "Delete", new { id=item.AdminId })
+        </td>
+    </tr>
+}
+
+</table>

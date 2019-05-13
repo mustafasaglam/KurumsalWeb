@@ -1,0 +1,41 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Hizmet>
+@{
+    ViewBag.Title = "Hizmetlerimiz";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+              
+                <div class="row">
+                    <section id="projects">
+                        <ul id="thumbs" class="portfolio">
+                            <!-- Item Project and Filter Name -->
+
+                            @foreach (var item in Model)
+                            {
+                                <li class="item-thumbs col-lg-3 design" data-id="id-0" data-type="web">
+                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
+                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="@item.Baslik" href="@item.ResimURL">
+                                        <span class="overlay-img"></span>
+                                        <span class="overlay-img-thumb font-icon-plus"></span>
+                                    </a>
+                                    <!-- Thumb Image and Description -->
+                                    <img src="@item.ResimURL" alt="@item.Aciklama">
+                                </li>
+                            }
+
+
+
+                            <!-- End Item Project -->
+
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

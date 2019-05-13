@@ -1,0 +1,42 @@
+﻿@model KurumsalWeb.Models.Model.Hizmet
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hizmet Düzenle</h2>
+
+<div class="form">
+    <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/Hizmet/Edit/@Model.HizmetId" enctype="multipart/form-data">
+        <div class="form-group ">
+            <label for="cname" class="control-label col-lg-2">Başlık <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <input class="form-control" id="Baslik" name="Baslik" minlength="5" type="text" required value="@Model.Baslik" />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="cemail" class="control-label col-lg-2">Açıklama <span class="required">*</span></label>
+            <div class="col-lg-10">
+                <textarea name="Aciklama" required class="ckeditor">@Model.Aciklama</textarea>
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Önceki Resim</label>
+            <div class="col-lg-10">
+                <img src="@Model.ResimURL" height="150" width="150" />
+            </div>
+        </div>
+        <div class="form-group ">
+            <label for="curl" class="control-label col-lg-2">Resim</label>
+            <div class="col-lg-10">
+                <input type="file" class="form-control" name="ResimURL" accept=".jpg,.png,.jpeg" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+                <button class="btn btn-primary" type="submit">Kaydet</button>
+                <button class="btn btn-default" type="button"><a href="/Hizmet/Index">İptal</a></button>
+            </div>
+        </div>
+    </form>
+</div>

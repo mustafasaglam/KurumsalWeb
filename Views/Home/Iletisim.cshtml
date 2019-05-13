@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Iletisim";
+    Layout = "~/Views/Shared/_SiteLayout.cshtml";
+}
+
+<section id="content">
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95929.60701830742!2d36.24365813527395!3d41.2914522741477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x408877e97607d663%3A0xb939cc265fdeb52!2sSamsun!5e0!3m2!1str!2str!4v1547822141316" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <h4><strong>İletişim</strong></h4>
+                @if (ViewBag.Uyari== "Mesajınız başarı ile gönderilmiştir.")
+                {
+                    <div class="alert alert-info">@ViewBag.Uyari</div>
+                }
+
+                <form action="/Home/Iletisim/" method="post" role="form" class="contactForm">
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <input type="text" name="adsoyad" class="form-control" id="name" placeholder="İsminiz" data-rule="minlen:4" data-msg="Lütfen en az 4 karekter giriniz" />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Mail Adresiniz" data-rule="email" required />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="konu" id="subject" placeholder="Konu" data-rule="minlen:4" required />
+                        <div class="validation"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="mesaj" rows="5" data-rule="required" required placeholder="Mesajınız"></textarea>
+                        <div class="validation"></div>
+                    </div>
+
+                    <div class="text-center"><button type="submit" class="btn btn-theme">Gönder</button></div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

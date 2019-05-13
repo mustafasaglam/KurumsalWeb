@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="KurumsalDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eposta" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Yetki" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="BlogId" />
+    </Key>
+    <Property Name="BlogId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Icerik" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ResimURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="KategoriId" Type="int" />
+  </EntityType>
+  <EntityType Name="Hakkimizda">
+    <Key>
+      <PropertyRef Name="HakkimizdaId" />
+    </Key>
+    <Property Name="HakkimizdaId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Aciklama" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hizmet">
+    <Key>
+      <PropertyRef Name="HizmetId" />
+    </Key>
+    <Property Name="HizmetId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+    <Property Name="ResimURL" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Iletisim">
+    <Key>
+      <PropertyRef Name="İletisimId" />
+    </Key>
+    <Property Name="İletisimId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Adres" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="Whatsapp" Type="nvarchar" MaxLength="50" />
+    <Property Name="Facebook" Type="nvarchar" MaxLength="50" />
+    <Property Name="Twitter" Type="nvarchar" MaxLength="50" />
+    <Property Name="Instagram" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Kategori">
+    <Key>
+      <PropertyRef Name="KategoriId" />
+    </Key>
+    <Property Name="KategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Aciklama" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Kimlik">
+    <Key>
+      <PropertyRef Name="KimlikId" />
+    </Key>
+    <Property Name="KimlikId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Keywords" Type="nvarchar" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="LogoURL" Type="nvarchar" MaxLength="250" />
+    <Property Name="Unvan" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Blog_Kategori">
+    <End Role="Kategori" Type="Self.Kategori" Multiplicity="0..1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kategori">
+        <PropertyRef Name="KategoriId" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="KategoriId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="KurumsalDBModelStoreContainer">
+    <EntitySet Name="Admin" EntityType="Self.Admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hakkimizda" EntityType="Self.Hakkimizda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hizmet" EntityType="Self.Hizmet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Iletisim" EntityType="Self.Iletisim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kategori" EntityType="Self.Kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kimlik" EntityType="Self.Kimlik" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Blog_Kategori" Association="Self.FK_Blog_Kategori">
+      <End Role="Kategori" EntitySet="Kategori" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

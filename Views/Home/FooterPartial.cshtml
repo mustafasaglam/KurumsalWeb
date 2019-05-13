@@ -1,0 +1,88 @@
+﻿
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Kurumsal Web Sitesi Projesi</h5>
+                    <address>
+                        <strong>@ViewBag.Iletisim.Adres</strong><br>
+
+                    </address>
+                    <p>
+                        <i class="icon-phone"></i>Tel: @ViewBag.Iletisim.Telefon <br>
+                        <i class="icon-phone"></i>Whatsapp: @ViewBag.Iletisim.Whatsapp <br>
+                        <i class="icon-envelope-alt"></i>Fax: @ViewBag.Iletisim.Fax
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Menü</h5>
+                    <ul class="link-list">
+                        <li><a href="/Home/Index/">Ana Sayfa</a></li>
+                        <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                        <li><a href="/Home/Blog/">Blog</a></li>
+                        <li><a href="/Home/Hizmetlerimiz/">Hizmetler</a></li>
+                        <li><a href="/Home/Iletisim/">İletişim</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Son Blog Yazıları</h5>
+                    <ul class="link-list">
+                        @foreach (var item in ViewBag.Blog)
+                        {
+                            <li><a href="/Home/BlogDetay/@item.BlogId">@item.Baslik</a></li>
+                        }
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Hizmetlerimiz</h5>
+                    <div class="flickr_badge">
+                        @foreach (var item in ViewBag.Hizmetler)
+                        {
+                            <img src="@item.ResimURL" width="75" height="30" />}
+
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sub-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="copyright">
+                        <p>@DateTime.Now.Year  &copy; Tüm Hakları Gizlidir</p>
+                        <div class="credits">
+                            <!--
+                              All the links in the footer should remain intact.
+                              You can delete the links only if you purchased the pro version.
+                              Licensing information: https://bootstrapmade.com/license/
+                              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Moderna
+                            -->
+                            Designed by <a href="https://kurumsalweb.com/">KurumsalWEB</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="social-network">
+                        <li><a href="www.facebook.com/@ViewBag.Iletisim.Facebook" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="www.twitter.com/@ViewBag.Iletisim.Twitter" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="www.instagram.com/@ViewBag.Iletisim.Instagram" data-placement="top" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
+                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

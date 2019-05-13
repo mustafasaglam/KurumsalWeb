@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - @ViewBag.Kimlik.Title</title>
+    <meta name="description" content="@Html.Raw(ViewBag.Kimlik.Description)" />
+    <meta name="keywords"  content="@ViewBag.Kimlik.Keywords"/>
+
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <meta charset="utf-8">
+
+
+
+    <!-- css -->
+    <link href="/Content/SiteLayout/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="/Content/SiteLayout/css/jcarousel.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/flexslider.css" rel="stylesheet" />
+    <link href="/Content/SiteLayout/css/style.css" rel="stylesheet" />
+
+    <!-- Theme skin -->
+    <link href="/Content/SiteLayout/skins/default.css" rel="stylesheet" />
+
+    <!-- =======================================================
+    Theme Name: Moderna
+    Theme URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+    ======================================================= -->
+
+</head>
+<body>
+
+
+    <div id="wrapper">
+        <!-- start header -->
+        <header>
+            <div class="navbar navbar-default navbar-static-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="">@*<span>K</span>urumsalWeb*@<img src="@ViewBag.Kimlik.LogoURL" height="30" width="75" /> @ViewBag.Kimlik.Unvan</a>
+                    </div>
+                    <div class="navbar-collapse collapse ">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="/Anasayfa">Ana Sayfa</a></li>
+                            @*<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Hakkımızda <b class=" icon-angle-down"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="/Home/Hakkimizda/">Hakkımızda</a></li>
+                                        <li><a href="/Home/Hizmetlerimiz/">Hizmetlerimiz</a></li>
+                                        <li><a href="pricingbox.html">Pricing box</a></li>
+                                    </ul>
+                                </li>*@
+                            <li><a href="/Hakkimizda/" />Hakkımızda</a></li>
+                            <li><a href="/Hizmetlerimiz" />Hizmetlerimiz</a></li>
+                            <li><a href="/BlogPost/">Blog</a></li>
+                            <li><a href="/iletisim/">İletişim</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- end header -->
+        <div class="container">
+            @RenderBody()
+        </div>
+        
+     
+           
+                @{
+                    Html.RenderAction("FooterPartial", "Home");
+                }
+            
+           
+        
+        
+    </div>
+
+
+    <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+    <!-- javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/Content/SiteLayout/js/jquery.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.easing.1.3.js"></script>
+    <script src="/Content/SiteLayout/js/bootstrap.min.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox.pack.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.fancybox-media.js"></script>
+    <script src="/Content/SiteLayout/js/google-code-prettify/prettify.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/jquery.quicksand.js"></script>
+    <script src="/Content/SiteLayout/js/portfolio/setting.js"></script>
+    <script src="/Content/SiteLayout/js/jquery.flexslider.js"></script>
+    <script src="/Content/SiteLayout/js/animate.js"></script>
+    <script src="/Content/SiteLayout/js/custom.js"></script>
+
+    @*<script src="~/Scripts/jquery-3.3.1.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>*@
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Kategori>
+@{
+    ViewBag.Title = "Admin Ana Sayfa";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+        <!--overview start-->
+   
+
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box blue-bg">
+                    <i class="fa fa-cloud-download"></i>
+                    <div class="count">@ViewBag.BlogSay</div>
+                    <div class="title">Blog Yazısı</div>
+                </div>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box brown-bg">
+                    <i class="fa fa-shopping-cart"></i>
+                    <div class="count">@ViewBag.KategoriSay</div>
+                    <div class="title">Kategori</div>
+                </div>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box dark-bg">
+                    <i class="fa fa-thumbs-o-up"></i>
+                    <div class="count">@ViewBag.HizmetSay</div>
+                    <div class="title">Hizmetler</div>
+                </div>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                <div class="info-box green-bg">
+                    <i class="fa fa-cubes"></i>
+                    <div class="count">@ViewBag.YorumSay</div>
+                    <div class="title">Yorumlar</div>
+                </div>
+                <!--/.info-box-->
+            </div>
+            <!--/.col-->
+
+        </div>
+        <!--/.row-->
+
+
+
+
+   
+    <div class="text-right">
+        <div class="credits">
+            <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version form: https://bootstrapmade.com/buy/?theme=NiceAdmin
+            -->
+            Designed by <a href="#">KurumsalWeb Admin</a>
+        </div>
+    </div>

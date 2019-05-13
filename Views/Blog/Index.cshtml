@@ -1,0 +1,50 @@
+﻿@model IEnumerable<KurumsalWeb.Models.Model.Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#myTable').DataTable(
+
+            {
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+                }
+            }
+        );
+    });
+
+</script>
+<h2>Blog Kayıtları</h2>
+
+<a class="btn btn-default" href="/Blog/Create/">Yeni Blog Ekle</a>
+
+<table class="table table-striped" id="myTable">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Başlık</th>
+            <th>Kategori</th>
+            <th>ResimURL</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.BlogId</td>
+                <td>@item.Baslik</td>
+                <td>@item.Kategori.KategoriAd</td>
+                <td><img src="@item.ResimURL" width="100" height="100" /></td>
+                <td><a href="/Blog/Edit/@item.BlogId">Güncelle</a> | <a href="/Blog/Delete/@item.BlogId">Sil</a></td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
