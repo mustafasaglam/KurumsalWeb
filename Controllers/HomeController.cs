@@ -66,7 +66,7 @@ namespace KurumsalWeb.Controllers
                 WebMail.SmtpServer = "smtp.gmail.com";
                 WebMail.EnableSsl = true;
                 WebMail.UserName = "kurumsalweb01@gmail.com";
-                WebMail.Password = "Kurumsal36987";
+                WebMail.Password = "**Buraya mailinizin şifresi";
                 WebMail.SmtpPort = 587;
                 WebMail.Send("kurumsalweb01@gmail.com", konu, email + "-" + mesaj);
                 ViewBag.Uyari = "Mesajınız başarı ile gönderilmiştir.";
